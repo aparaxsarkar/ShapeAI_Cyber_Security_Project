@@ -30,5 +30,5 @@ str2 = "\nWeather description : " + str(weather_description)
 str3 = "\nHumidity            : " + str(humidity) + '%'
 str4 = "\nWind speed          : " + str(wind_speed) + 'kmph'
 
-with open('weatherinformation.txt', 'w') as f:
+with open('weatherinformation.txt','w') as f:
     f.writelines(str1+str2+str3+str4)
