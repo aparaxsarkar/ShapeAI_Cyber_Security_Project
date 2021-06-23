@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 import pytz
-import os
+import os, sys, stat
 
 IST = pytz.timezone('Asia/Kolkata')
 
@@ -20,7 +20,15 @@ date_time = datetime.now(IST).strftime("%d %b %Y | %I:%M:%S %p")
 
 print ("\n"+"Weather informtion for {} | {}".format(loc.title(), date_time)+"\n")
 
-print ("Current temperature : {:.2f} degree C".format(temperature))
+print ("Current temperature : {:.2f} degree C".format(temperature)) 
 print ("Weather description :",weather_description)
 print ("Humidity            :",humidity, '%')
 print ("Wind speed          :",wind_speed ,'kmph')
+
+str1 = "Current temperature : " + str("{:.2f}".format(temperature)) + " degree C"
+str2 = "\nWeather description : " + str(weather_description)
+str3 = "\nHumidity            : " + str(humidity) + '%'
+str4 = "\nWind speed          : " + str(wind_speed) + 'kmph'
+
+with open('weatherinformation.txt', 'w') as f:
+    f.writelines(str1+str2+str3+str4)
