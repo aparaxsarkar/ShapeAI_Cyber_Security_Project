@@ -1,5 +1,3 @@
-ShapeAI-Cyber-Security:
-
 This is the project from Day 7 of the Python and Cyber Security Bootcamp conducted by Shape AI.
 
 On running 'weather.py' it ask for an input that is a city name.
